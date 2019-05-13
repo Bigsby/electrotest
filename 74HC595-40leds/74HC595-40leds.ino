@@ -32,7 +32,7 @@ void loop() {
   for (int currentByte = 0; currentByte < 5; currentByte++) {
     while (value <= 128) {
       writeShift(value, currentByte);
-      value = value * 2;
+      value <<= 1;
     }
     value = 1;
   }
@@ -42,7 +42,7 @@ void loop() {
   for (int currentByte = 4; currentByte >= 0; currentByte--) {
     while (value > 0) {
       writeShift(value, currentByte);
-      value = value / 2;
+      value >>= 1;
     }
     value = 128;
   }
